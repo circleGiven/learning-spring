@@ -33,6 +33,15 @@
     <bean id="sony" class="SonySpeaker"></bean>
     <bean id="apple" class="AppleSpeaker"></bean>
 
+    <bean id="collectionBean" class="CollectionBean">
+        <property name="addressList">
+            <list>
+                <value>수원시</value>
+                <value>전주시</value>
+            </list>
+        </property>
+    </bean>
+
     <!-- 트랜잭션 관리 -->
     <import resource="context-transaction.xml"/>
     <!-- 데이터소스 관리 -->
