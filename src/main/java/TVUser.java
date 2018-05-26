@@ -27,13 +27,18 @@ public class TVUser {
 
 
         // 2. spring 컨테이너로부터 필요한 객체 요청(LookUp)
+        // LookUp 요청할때는 applicationContext 파일 안에 등록된 Bean에 id로 요청한다
         TV tv = (TV)factory.getBean("tv");
+        // scope가 prototype인 경우에 생성이 된다.
+//        TV tv1 = (TV)factory.getBean("tv");
+//        TV tv2 = (TV)factory.getBean("tv");
         tv.powerOn();
         tv.volumnUp();
         tv.volumnDown();
         tv.powerOff();
 
         // 3. spring 컨테이너 종료
+        // 객체 제거
         factory.close();
     }
 }
