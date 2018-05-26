@@ -7,14 +7,24 @@ public class SamsungTV implements TV {
         System.out.println("==> SamsungTV 객체 생성");
     }
 
-    public SamsungTV(Speaker speaker) {
-        System.out.println("==> SamsungTV 스피커와 객체 생성");
+//    public SamsungTV(Speaker speaker) {
+//        System.out.println("==> SamsungTV 스피커와 객체 생성");
+//        this.speaker = speaker;
+//    }
+//
+//    public SamsungTV(Speaker speaker, int price) {
+//        System.out.println("==> SamsungTV 스피커와 객체 그리고 가격 생성");
+//        this.speaker = speaker;
+//        this.price = price;
+//    }
+
+    public void setSpeaker(Speaker speaker) {
+        System.out.println("setSpeaker()");
         this.speaker = speaker;
     }
 
-    public SamsungTV(Speaker speaker, int price) {
-        System.out.println("==> SamsungTV 스피커와 객체 그리고 가격 생성");
-        this.speaker = speaker;
+    public void setPrice(int price) {
+        System.out.println("setPrice()");
         this.price = price;
     }
 
@@ -28,7 +38,7 @@ public class SamsungTV implements TV {
     }
 
     public void powerOn() {
-        System.out.println("삼성TV --- 전원 on");
+        System.out.println("삼성TV --- 전원 on (" + this.price + ")");
     }
     public void powerOff() {
         System.out.println("삼성TV --- 전원 off");
