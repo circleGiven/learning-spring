@@ -11,9 +11,18 @@
     <!-- destroy-method: 스프링 컨테이너가 객체를 삭제하기 직전에 호출함 -->
     <!-- lazy-init: 컨테이너가 구동되는 시점이 아닌 bean이 사용되는 시점에 생성되도록 설정할 수 있다 -->
     <!-- scope: 객체를 어떤 방식으로 생성할 것인지 정할수 있다(default singleton) -->
-    <bean id="tv" class="SamsungTV" init-method="initMethod" destroy-method="destroyMethod" scope="prototype"></bean>
+    <bean id="tv" class="SamsungTV" init-method="initMethod" destroy-method="destroyMethod" scope="prototype">
+        <!-- 해당 객체의 생성자에 파라메터 -->
+        <!-- ref: 해당 객체의 id를 찾아 파라메터로 전달함 -->
+        <!-- index: 생성자에 전달할 순서를 설정 -->
+        <!-- 없다면 순서대로 전달함 -->
+        <constructor-arg ref="apple" index="0"></constructor-arg>
+        <constructor-arg value="280000" index="1"></constructor-arg>
+    </bean>
 
-
+    <!-- 스프링은 기본적으로 bean에 등록된 순서대로 생성하지만, 이 객체는 생성자 인젝션으로 인해 먼저 생성된다 -->
+    <bean id="sony" class="SonySpeaker"></bean>
+    <bean id="apple" class="AppleSpeaker"></bean>
 
     <!-- 트랜잭션 관리 -->
     <import resource="context-transaction.xml"/>
