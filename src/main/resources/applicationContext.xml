@@ -35,11 +35,21 @@
 
     <bean id="collectionBean" class="CollectionBean">
         <property name="addressList">
-            <set value-type="java.lang.String">
-                <value>수원시</value>
-                <value>전주시</value>
-                <value>전주시</value>
-            </set>
+            <!--<set value-type="java.lang.String">-->
+                <!--<value>수원시</value>-->
+                <!--<value>전주시</value>-->
+                <!--<value>전주시</value>-->
+            <!--</set>-->
+            <map>
+                <entry>
+                    <key><value>길동이</value></key>
+                    <value>수원시</value>
+                </entry>
+                <entry>
+                    <key><value>원주니</value></key>
+                    <value>전주시</value>
+                </entry>
+            </map>
         </property>
     </bean>
 
