@@ -40,16 +40,20 @@
                 <!--<value>전주시</value>-->
                 <!--<value>전주시</value>-->
             <!--</set>-->
-            <map>
-                <entry>
-                    <key><value>길동이</value></key>
-                    <value>수원시</value>
-                </entry>
-                <entry>
-                    <key><value>원주니</value></key>
-                    <value>전주시</value>
-                </entry>
-            </map>
+            <!--<map>-->
+                <!--<entry>-->
+                    <!--<key><value>길동이</value></key>-->
+                    <!--<value>수원시</value>-->
+                <!--</entry>-->
+                <!--<entry>-->
+                    <!--<key><value>원주니</value></key>-->
+                    <!--<value>전주시</value>-->
+                <!--</entry>-->
+            <!--</map>-->
+            <props>
+                <prop key="길동이">수원시</prop>
+                <prop key="원주니">전주시</prop>
+            </props>
         </property>
     </bean>
 

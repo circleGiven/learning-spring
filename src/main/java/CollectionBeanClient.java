@@ -3,6 +3,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Set;
 
 public class CollectionBeanClient {
@@ -13,7 +14,7 @@ public class CollectionBeanClient {
 
 
 //        List<String> addressList = bean.getAddressList();
-        Map<String, String> addressList = bean.getAddressList();
+        Properties addressList = bean.getAddressList();
         System.out.println(addressList);
 //        for (String address: addressList) {
 //            System.out.println(address.toString());
