@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- spring-beans.xsd 스키마 문서가 schemaLocation으로 등록되더있어서 bean 관련 엘리먼트가 사용가능함 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!-- 여기 class 속성에 bean으로 등록할 클래스 루트를 입력해야 됨 -->
+    <!-- id 속성은 생략가능 -->
     <bean id="tv" class="SamsungTV"></bean>
+    <!-- 트랜잭션 관리 -->
+    <import resource="context-transaction.xml"/>
+    <!-- 데이터소스 관리 -->
+    <import resource="context-datasource.xml"/>
 </beans>
