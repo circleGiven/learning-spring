@@ -13,7 +13,7 @@
 
 
     <!-- 컴포넌트 스캔을 사용하기 위해 등록 -->
-    <context:component-scan base-package="tv"></context:component-scan>
+    <context:component-scan base-package="biz"></context:component-scan>
 
     <!-- class: 여기 class 속성에 bean으로 등록할 클래스 루트를 입력해야 됨 -->
     <!-- id: id 속성은 생략가능 -->
