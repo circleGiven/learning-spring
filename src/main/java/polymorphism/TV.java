@@ -6,7 +6,7 @@ public interface TV {
 
     public void powerOff();
 
-    public void volumnUp();
+    public void volumeUp();
 
-    public void volumnDown();
+    public void volumeDown();
 }

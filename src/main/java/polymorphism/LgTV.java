@@ -10,11 +10,11 @@ public class LgTV implements TV {
         System.out.println("LgTV---전원 끈다.");
     }
 
-    public void volumnUp() {
+    public void volumeUp() {
         System.out.println("LgTV---소리 울린다,");
     }
 
-    public void volumnDown() {
+    public void volumeDown() {
         System.out.println("LgTV---소리 내린다.");
     }
 }
