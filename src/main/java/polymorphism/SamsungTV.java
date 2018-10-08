@@ -2,6 +2,10 @@ package polymorphism;
 
 public class SamsungTV implements TV {
 
+    public void initMethod() {
+        System.out.println("객체 초기화 작업 처리..");
+    }
+
     public SamsungTV() {
         System.out.println("===> SamsungTV 객체 생성");
     }
