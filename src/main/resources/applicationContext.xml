@@ -4,11 +4,23 @@
        xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+    <!-- polymorphism -->
     <bean id="tv" class="polymorphism.SamsungTV" p:price="2700000" p:speaker-ref="sony">
     </bean>
 
     <bean id="sony" class="polymorphism.SonySpeaker"></bean>
     <bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+    <!-- //polymorphism -->
+    <!-- collection -->
+    <bean id="collectionBean" class="collection.CollectionBean">
+        <property name="addressList">
+            <list>
+                <value>수원시 장안구</value>
+                <value>수원시 팔달구</value>
+            </list>
+        </property>
+    </bean>
+    <!-- //collection -->
+
 
 </beans>
