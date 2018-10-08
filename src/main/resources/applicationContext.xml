@@ -1,74 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- spring-beans.xsd 스키마 문서가 schemaLocation으로 등록되더있어서 bean 관련 엘리먼트가 사용가능함 -->
-<!-- p 네임스페이스를 사용하면 효율적으로 의존성 주입을 사용한다 -->
-<!-- 어노테이션을 사용하기 위해 context 네임스페이스를 추가한다 -->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans.xsd
-                           http://www.springframework.org/schema/context
-                           http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="tv" class="polymorphism.SamsungTV"></bean>
 
-    <!-- 컴포넌트 스캔을 사용하기 위해 등록 -->
-    <context:component-scan base-package="biz"></context:component-scan>
-
-    <!-- class: 여기 class 속성에 bean으로 등록할 클래스 루트를 입력해야 됨 -->
-    <!-- id: id 속성은 생략가능 -->
-    <!-- 하지만 LookUp을 할때는 id가 반드시 필요하다 -->
-    <!-- init-method: 객체 생성후 초기화 작업이 필요하다면 init-method 속성을 사용하여 메서드를 호출할 수 있다 -->
-    <!-- destroy-method: 스프링 컨테이너가 객체를 삭제하기 직전에 호출함 -->
-    <!-- lazy-init: 컨테이너가 구동되는 시점이 아닌 bean이 사용되는 시점에 생성되도록 설정할 수 있다 -->
-    <!-- scope: 객체를 어떤 방식으로 생성할 것인지 정할수 있다(default singleton) -->
-    <!--<bean id="tv" class="SamsungTV" init-method="initMethod" destroy-method="destroyMethod" scope="prototype">-->
-        <!-- 해당 객체의 생성자에 파라메터 -->
-        <!-- ref: 해당 객체의 id를 찾아 파라메터로 전달함 -->
-        <!-- index: 생성자에 전달할 순서를 설정 -->
-        <!-- 없다면 순서대로 전달함 -->
-        <!--<constructor-arg ref="apple" index="0"></constructor-arg>-->
-        <!--<constructor-arg value="280000" index="1"></constructor-arg>-->
-
-        <!-- setter 를 사용 -->
-        <!--<property name="speaker" ref="apple"></property>-->
-        <!--<property name="price" value="28000"></property>-->
-    <!--</bean>-->
-
-    <!-- p 네임스페이스를 사용한 의존성 주입 -->
-    <!--<bean id="tv" class="SamsungTV" p:speaker-ref="sony" p:price="2141"></bean>-->
-    <!--<bean id="tv" class="LgTV"></bean>-->
-
-    <!--&lt;!&ndash; 스프링은 기본적으로 bean에 등록된 순서대로 생성하지만, 이 객체는 생성자 인젝션으로 인해 먼저 생성된다 &ndash;&gt;-->
-    <!--<bean id="sony" class="SonySpeaker"></bean>-->
-    <!--<bean id="apple" class="AppleSpeaker"></bean>-->
-
-    <!--<bean id="collectionBean" class="CollectionBean">-->
-        <!--<property name="addressList">-->
-            <!--&lt;!&ndash;<set value-type="java.lang.String">&ndash;&gt;-->
-                <!--&lt;!&ndash;<value>수원시</value>&ndash;&gt;-->
-                <!--&lt;!&ndash;<value>전주시</value>&ndash;&gt;-->
-                <!--&lt;!&ndash;<value>전주시</value>&ndash;&gt;-->
-            <!--&lt;!&ndash;</set>&ndash;&gt;-->
-            <!--&lt;!&ndash;<map>&ndash;&gt;-->
-                <!--&lt;!&ndash;<entry>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<key><value>길동이</value></key>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<value>수원시</value>&ndash;&gt;-->
-                <!--&lt;!&ndash;</entry>&ndash;&gt;-->
-                <!--&lt;!&ndash;<entry>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<key><value>원주니</value></key>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<value>전주시</value>&ndash;&gt;-->
-                <!--&lt;!&ndash;</entry>&ndash;&gt;-->
-            <!--&lt;!&ndash;</map>&ndash;&gt;-->
-            <!--<props>-->
-                <!--<prop key="길동이">수원시</prop>-->
-                <!--<prop key="원주니">전주시</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-    <!--</bean>-->
-
-    <!--&lt;!&ndash; 트랜잭션 관리 &ndash;&gt;-->
-    <!--<import resource="context-transaction.xml"/>-->
-    <!--&lt;!&ndash; 데이터소스 관리 &ndash;&gt;-->
-    <!--<import resource="context-datasource.xml"/>-->
 </beans>
