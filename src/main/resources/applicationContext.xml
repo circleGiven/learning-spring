@@ -14,10 +14,10 @@
     <!-- collection -->
     <bean id="collectionBean" class="collection.CollectionBean">
         <property name="addressList">
-            <list>
+            <set value-type="java.lang.String">
                 <value>수원시 장안구</value>
                 <value>수원시 팔달구</value>
-            </list>
+            </set>
         </property>
     </bean>
     <!-- //collection -->
