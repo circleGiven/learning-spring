@@ -4,11 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+
 @Component("tv")
 public class LgTV implements TV {
 
-    @Qualifier("apple")
-    @Autowired
+    @Resource(name = "apple")
     private Speaker speaker;
 
     private int price;
