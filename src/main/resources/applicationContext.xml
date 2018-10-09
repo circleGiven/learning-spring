@@ -9,20 +9,7 @@
                            http://www.springframework.org/schema/context/spring-context-4.2.xsd">
     <!-- polymorphism -->
     <context:component-scan base-package="polymorphism"></context:component-scan>
+
+    <bean id="tv" class="polymorphism.LgTV"></bean>
     <!-- //polymorphism -->
-    <!-- collection -->
-    <bean id="collectionBean" class="collection.CollectionBean">
-        <property name="addressList">
-            <map>
-                <entry>
-                    <key><value>최원준</value></key>
-                    <value>수원시 팔달구</value>
-                </entry>
-
-            </map>
-        </property>
-    </bean>
-    <!-- //collection -->
-
-
 </beans>
