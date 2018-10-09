@@ -11,5 +11,6 @@
     <context:component-scan base-package="polymorphism"></context:component-scan>
 
     <bean id="tv" class="polymorphism.LgTV"></bean>
+    <bean id="sony" class="polymorphism.SonySpeaker"></bean>
     <!-- //polymorphism -->
 </beans>
