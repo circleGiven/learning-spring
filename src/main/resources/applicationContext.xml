@@ -16,11 +16,5 @@
 
     <!-- biz -->
     <context:component-scan base-package="biz"></context:component-scan>
-
-    <bean id="userService" class="biz.user.impl.UserServiceImpl">
-        <property name="userDAO" ref="userDAO"/>
-    </bean>
-
-    <bean id="userDAO" class="biz.user.impl.UserDAO"/>
     <!-- //biz -->
 </beans>
