@@ -8,10 +8,19 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context-4.2.xsd">
     <!-- polymorphism -->
-    <context:component-scan base-package="polymorphism"></context:component-scan>
+    <!--<context:component-scan base-package="polymorphism"></context:component-scan>-->
+
+    <!--<bean id="tv" class="polymorphism.LgTV"></bean>-->
+    <!--<bean id="sony" class="polymorphism.SonySpeaker"></bean>-->
+    <!-- //polymorphism -->
+
+    <!-- biz -->
     <context:component-scan base-package="biz"></context:component-scan>
 
-    <bean id="tv" class="polymorphism.LgTV"></bean>
-    <bean id="sony" class="polymorphism.SonySpeaker"></bean>
-    <!-- //polymorphism -->
+    <bean id="userService" class="biz.user.impl.UserServiceImpl">
+        <property name="userDAO" ref="userDAO"/>
+    </bean>
+
+    <bean id="userDAO" class="biz.user.impl.UserDAO"/>
+    <!-- //biz -->
 </beans>
