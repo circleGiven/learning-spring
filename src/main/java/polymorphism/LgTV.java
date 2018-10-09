@@ -9,7 +9,7 @@ import javax.annotation.Resource;
 @Component("tv")
 public class LgTV implements TV {
 
-    @Resource(name = "apple")
+    @Autowired
     private Speaker speaker;
 
     private int price;
