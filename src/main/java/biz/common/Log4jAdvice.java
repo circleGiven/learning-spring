@@ -2,6 +2,6 @@ package biz.common;
 
 public class Log4jAdvice {
     public void printLogging() {
-        System.out.println("[공통 로그] 비즈니스 로직 수행 전 동작");
+        System.out.println("[공통 로그-Log4jAdvice] 비즈니스 로직 수행 전 동작");
     }
 }

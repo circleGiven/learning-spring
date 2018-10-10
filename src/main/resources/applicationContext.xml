@@ -20,11 +20,11 @@
     <!-- biz -->
     <context:component-scan base-package="biz"></context:component-scan>
 
-    <bean id="log" class="biz.common.LogAdvice"></bean>
+    <bean id="log" class="biz.common.Log4jAdvice"></bean>
     <aop:config>
         <aop:pointcut id="allPointcut" expression="execution(* biz..*Impl.*(..))"/>
         <aop:aspect ref="log">
-            <aop:before method="printLog" pointcut-ref="allPointcut"/>
+            <aop:before method="printLogging" pointcut-ref="allPointcut"/>
         </aop:aspect>
     </aop:config>
     <!-- //biz -->
