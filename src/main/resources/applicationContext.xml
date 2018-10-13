@@ -23,16 +23,23 @@
     <bean id="log" class="biz.common.Log4jAdvice"></bean>
 
     <bean id="before" class="biz.common.BeforeAdvice"/>
+    <bean id="after" class="biz.common.AfterReturningAdvice"/>
+
 
     <aop:config>
         <!-- 리턴타입과 매개변수를 무시하고 biz 패키지를 시작하는 클래스 중 이름이 Impl로 끝나는 클래스의 모든 메서드를 포인트컷 타겟으로 설정 -->
         <aop:pointcut id="allPointcut" expression="execution(* biz..*Impl.*(..))"/>
         <!-- 위와 같지만 그 중에서도 get으로 시작하는 메서드만 설정 -->
         <aop:pointcut id="getPointcut" expression="execution(* biz..*Impl.get*(..))"/>
-        <!-- before advice -->
-        <aop:aspect ref="before">
-            <aop:before method="beforeLog" pointcut-ref="allPointcut"/>
+
+        <!-- after advice return-->
+        <aop:aspect ref="after">
+            <aop:after-returning method="afterLog" pointcut-ref="getPointcut"/>
         </aop:aspect>
+        <!-- before advice -->
+        <!--<aop:aspect ref="before">-->
+            <!--<aop:before method="beforeLog" pointcut-ref="allPointcut"/>-->
+        <!--</aop:aspect>-->
 
         <!--<aop:aspect ref="log">-->
             <!--<aop:before method="printLogging" pointcut-ref="allPointcut"/>-->
