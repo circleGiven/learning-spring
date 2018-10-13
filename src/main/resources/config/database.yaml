@@ -1,0 +1,5 @@
+jdbc:
+  driver: org.mysql.Driver
+  url: jdbc:mysql://localhost:3306/~/test_spring
+  username: root
+  password: root
