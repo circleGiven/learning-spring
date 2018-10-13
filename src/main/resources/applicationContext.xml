@@ -36,9 +36,9 @@
         <aop:pointcut id="getPointcut" expression="execution(* biz..*Impl.get*(..))"/>
 
         <!-- Around -->
-        <aop:aspect ref="around">
-            <aop:around method="aroundLog" pointcut-ref="allPointcut"/>
-        </aop:aspect>
+        <!--<aop:aspect ref="around">-->
+            <!--<aop:around method="aroundLog" pointcut-ref="allPointcut"/>-->
+        <!--</aop:aspect>-->
 
         <!-- after advice-->
         <!--<aop:aspect ref="after">-->
@@ -56,9 +56,9 @@
         <!--</aop:aspect>-->
 
         <!-- before advice -->
-        <!--<aop:aspect ref="before">-->
-            <!--<aop:before method="beforeLog" pointcut-ref="allPointcut"/>-->
-        <!--</aop:aspect>-->
+        <aop:aspect ref="before">
+            <aop:before method="beforeLog" pointcut-ref="allPointcut"/>
+        </aop:aspect>
 
         <!--<aop:aspect ref="log">-->
             <!--<aop:before method="printLogging" pointcut-ref="allPointcut"/>-->
