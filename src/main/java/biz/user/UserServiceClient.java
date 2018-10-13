@@ -10,8 +10,8 @@ public class UserServiceClient {
         UserService userService = (UserService) container.getBean("userService");
 
         UserVO vo = new UserVO();
-        vo.setId("test");
-        vo.setPassword("test1312");
+        vo.setId("admin");
+        vo.setPassword("admin");
 
         UserVO user = userService.getUser(vo);
 
