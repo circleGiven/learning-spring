@@ -4,17 +4,13 @@ import biz.user.UserVO;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Service;
 
 @Service
 @Aspect
 public class AfterReturningAdvice {
 
-    @Pointcut("execution(* biz..*Impl.get*(..))")
-    public void getPointcut() {}
-
-    @AfterReturning(pointcut = "getPointcut()", returning = "returnObj")
+    @AfterReturning(pointcut = "PointcutCommon.getPointcut()", returning = "returnObj")
     public void afterLog(JoinPoint point, Object returnObj) {
         String method = point.getSignature().getName();
 
