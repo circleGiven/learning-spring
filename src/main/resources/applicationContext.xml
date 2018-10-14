@@ -34,6 +34,11 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
     <!-- //Spring JDBC 설정 -->
+    <!-- Transaction 설정 -->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!-- //Transaction 설정 -->
 
     <!-- biz -->
     <context:component-scan base-package="biz"></context:component-scan>
