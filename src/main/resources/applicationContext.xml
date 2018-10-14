@@ -18,12 +18,19 @@
     <!-- //polymorphism -->
 
     <context:property-placeholder location="classpath:config/database.properties"/>
+    <!-- datasource 설정 -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${jdbc.driver}"/>
         <property name="url" value="${jdbc.url}"/>
         <property name="username" value="${jdbc.username}"/>
         <property name="password" value="${jdbc.password}"/>
     </bean>
+    <!-- //datasource 설정 -->
+    <!-- Spring JDBC 설정 -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!-- //Spring JDBC 설정 -->
 
     <!-- biz -->
     <context:component-scan base-package="biz"></context:component-scan>
