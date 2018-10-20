@@ -8,38 +8,38 @@
 <%@page import="java.util.List" %>
 <%@page import="biz.board.impl.BoardDAO" %>
 <%@page import="biz.board.BoardVO" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
 
 <%
-    // ì‚¬ìš©ìž ìž…ë ¥ ì •ë³´ ì¶”ì¶œ
+    // »ç¿ëÀÚ ÀÔ·Â Á¤º¸ ÃßÃâ
 
-    // DB ì—°ë™ ì²˜ë¦¬
+    // DB ¿¬µ¿ Ã³¸®
     BoardVO vo = new BoardVO();
     BoardDAO boardDAO = new BoardDAO();
     List<BoardVO> boardList = boardDAO.getBoardList(vo);
 
-    // ì‘ë‹µ í™”ë©´ êµ¬ì„±
+    // ÀÀ´ä È­¸é ±¸¼º
 %>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>ê¸€ ëª©ë¡</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+    <title>±Û ¸ñ·Ï</title>
 </head>
 <body>
 <center>
-    <h1>ê¸€ ëª©ë¡</h1>
-    <h3>í…ŒìŠ¤íŠ¸ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤... <a href="logout_proc.jsp">Log-out</a></h3>
+    <h1>±Û ¸ñ·Ï</h1>
+    <h3>Å×½ºÆ®´Ô È¯¿µÇÕ´Ï´Ù... <a href="logout_proc.jsp">Log-out</a></h3>
 
     <form action="getBoardList.jsp" method="post">
         <table border="1" cellpadding="0" cellspacing="0" width="700">
             <tr>
                 <td align="right">
                     <select name="searchCondition">
-                        <option value="TITLE">ì œëª©</option>
-                        <option value="CONTENT">ë‚´ìš©</option>
+                        <option value="TITLE">Á¦¸ñ</option>
+                        <option value="CONTENT">³»¿ë</option>
                     </select>
                     <input name="searchKeyword" type="text"/>
-                    <input value="ê²€ìƒ‰" type="submit"/>
+                    <input value="°Ë»ö" type="submit"/>
                 </td>
             </tr>
         </table>
@@ -47,11 +47,11 @@
 
     <table border="1" cellspacing="0" cellpadding="0" width="700">
         <tr>
-            <th bgcolor="orange" width="100">ë²ˆí˜¸</th>
-            <th bgcolor="orange" width="200">ì œëª©</th>
-            <th bgcolor="orange" width="150">ìž‘ì„±ìž</th>
-            <th bgcolor="orange" width="150">ë“±ë¡ì¼</th>
-            <th bgcolor="orange" width="100">ì¡°íšŒìˆ˜</th>
+            <th bgcolor="orange" width="100">¹øÈ£</th>
+            <th bgcolor="orange" width="200">Á¦¸ñ</th>
+            <th bgcolor="orange" width="150">ÀÛ¼ºÀÚ</th>
+            <th bgcolor="orange" width="150">µî·ÏÀÏ</th>
+            <th bgcolor="orange" width="100">Á¶È¸¼ö</th>
         </tr>
 
         <% for (BoardVO board: boardList) { %>
@@ -69,7 +69,7 @@
         <% } %>
     </table>
     <br>
-    <a href="insertBoard.jsp">ìƒˆê¸€ ë“±ë¡</a>
+    <a href="insertBoard.jsp">»õ±Û µî·Ï</a>
 </center>
 </body>
 </html>

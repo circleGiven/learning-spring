@@ -5,11 +5,11 @@
   Time: 6:37 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
 <%
-    // ë¸Œë¼ìš°ì €ì™€ ì—°ê²°ëœ ì„¸ì…˜ ê°ì²´ë¥¼ ê°•ì œ ì¢…ë£Œ
+    // ºê¶ó¿ìÀú¿Í ¿¬°áµÈ ¼¼¼Ç °´Ã¼¸¦ °­Á¦ Á¾·á
     session.invalidate();
 
-    // ì„¸ì…˜ ì¢…ë£Œ í›„, ë©”ì¸ í™”ë©´ìœ¼ë¡œ ì´ë™
+    // ¼¼¼Ç Á¾·á ÈÄ, ¸ÞÀÎ È­¸éÀ¸·Î ÀÌµ¿
     response.sendRedirect("login.jsp");
 %>

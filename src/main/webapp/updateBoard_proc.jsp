@@ -7,15 +7,15 @@
 --%>
 <%@page import="biz.board.impl.BoardDAO" %>
 <%@page import="biz.board.BoardVO" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
 <%
-    // ì‚¬ìš©ìž ìž…ë ¥ ì •ë³´ ì¶”ì¶œ
-    request.setCharacterEncoding("UTF-8");
+    // »ç¿ëÀÚ ÀÔ·Â Á¤º¸ ÃßÃâ
+    request.setCharacterEncoding("EUC-KR");
     String title = request.getParameter("title");
     String content = request.getParameter("content");
     String seq = request.getParameter("seq");
 
-    // DB ì—°ë™ ì²˜ë¦¬
+    // DB ¿¬µ¿ Ã³¸®
     BoardVO vo = new BoardVO();
     vo.setTitle(title);
     vo.setContent(content);
@@ -24,6 +24,6 @@
     BoardDAO boardDAO = new BoardDAO();
     boardDAO.updateBoard(vo);
 
-    // í™”ë©´ ë„¤ë¹„ê²Œì´ì…˜
+    // È­¸é ³×ºñ°ÔÀÌ¼Ç
     response.sendRedirect("getBoardList.jsp");
 %>

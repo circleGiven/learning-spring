@@ -7,76 +7,76 @@
 --%>
 <%@page import="biz.board.impl.BoardDAO" %>
 <%@page import="biz.board.BoardVO" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
 
 <%
-    // Í≤ÄÏÉâÌï† Í≤åÏãúÍ∏Ä Î≤àÌò∏ Ï∂îÏ∂ú
+    // ∞Àªˆ«“ ∞‘Ω√±€ π¯»£ √ﬂ√‚
     String seq = request.getParameter("seq");
 
-    // DB Ïó∞Îèô Ï≤òÎ¶¨
+    // DB ø¨µø √≥∏Æ
     BoardVO vo = new BoardVO();
     vo.setSeq(Integer.parseInt(seq));
 
     BoardDAO boardDAO = new BoardDAO();
     BoardVO boardVO = boardDAO.getBoard(vo);
 
-    // ÏùëÎãµ ÌôîÎ©¥ Íµ¨ÏÑ±
+    // ¿¿¥‰ »≠∏È ±∏º∫
 %>
 
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Í∏Ä ÏÉÅÏÑ∏</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+    <title>±€ ªÛºº</title>
 </head>
 <body>
     <center>
-        <h1>Í∏Ä ÏÉÅÏÑ∏</h1>
+        <h1>±€ ªÛºº</h1>
         <a href="logout_proc.jsp">Log-out</a>
         <hr>
         <form action="updateBoard_proc.jsp" method="post">
             <input name="seq" type="hidden" value="<% boardVO.getSeq() %>"/>
             <table border="1" cellpadding="0" cellspacing="0">
                 <tr>
-                    <td bgcolor="orange" width="70">Ï†úÎ™©</td>
+                    <td bgcolor="orange" width="70">¡¶∏Ò</td>
                     <td align="left">
                         <input name="title" type="text" value="<%= boardVO.getTitle() %>"/>
                     </td>
                 </tr>
                 <tr>
-                    <td bgcolor="orange">ÏûëÏÑ±Ïûê</td>
+                    <td bgcolor="orange">¿€º∫¿⁄</td>
                     <td align="left">
                         <%= boardVO.getWriter() %>
                     </td>
                 </tr>
                 <tr>
-                    <td bgcolor="orange">ÎÇ¥Ïö©</td>
+                    <td bgcolor="orange">≥ªøÎ</td>
                     <td align="left">
                         <textarea name="content" cols="40" rows="10"><%= boardVO.getContent() %></textarea>
                     </td>
                 </tr>
                 <tr>
-                    <td bgcolor="orange">Îì±Î°ùÏùº</td>
+                    <td bgcolor="orange">µÓ∑œ¿œ</td>
                     <td align="left">
                         <%= boardVO.getRegDate() %>
                     </td>
                 </tr>
                 <tr>
-                    <td bgcolor="orange">Ï°∞ÌöåÏàò</td>
+                    <td bgcolor="orange">¡∂»∏ºˆ</td>
                     <td align="left">
                         <%= boardVO.getCnt() %>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" value="Í∏Ä ÏàòÏ†ï"/>
+                        <input type="submit" value="±€ ºˆ¡§"/>
                     </td>
                 </tr>
             </table>
         </form>
         <hr>
-        <a href="insertBoard.jsp">Í∏Ä Îì±Î°ù</a>&nbsp;&nbsp;&nbsp;
-        <a href="deleteBoard_proc.jsp?seq=<%= boardVO.getSeq() %>">Í∏Ä ÏÇ≠Ï†ú</a>&nbsp;&nbsp;&nbsp;
-        <a href="getBoardList.jsp">Í∏Ä Î™©Î°ù</a>
+        <a href="insertBoard.jsp">±€ µÓ∑œ</a>&nbsp;&nbsp;&nbsp;
+        <a href="deleteBoard_proc.jsp?seq=<%= boardVO.getSeq() %>">±€ ªË¡¶</a>&nbsp;&nbsp;&nbsp;
+        <a href="getBoardList.jsp">±€ ∏Ò∑œ</a>
     </center>
 </body>
 </html>

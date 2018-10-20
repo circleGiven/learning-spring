@@ -7,13 +7,13 @@
 --%>
 <%@page import="biz.user.impl.UserDAO" %>
 <%@page import="biz.user.UserVO" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
 <%
-    // ì‚¬ìš©ìž ìž…ë ¥ ì •ë³´ ì¶”ì¶œ
+    // »ç¿ëÀÚ ÀÔ·Â Á¤º¸ ÃßÃâ
     String id = request.getParameter("id");
     String password = request.getParameter("password");
 
-    // DB ì—°ë™ ì²˜ë¦¬
+    // DB ¿¬µ¿ Ã³¸®
     UserVO vo = new UserVO();
     vo.setId(id);
     vo.setPassword(password);
@@ -21,7 +21,7 @@
     UserDAO userDAO = new UserDAO();
     UserVO user = userDAO.getUser(vo);
 
-    // í™”ë©´ ë„¤ë¹„ê²Œì´ì…˜
+    // È­¸é ³×ºñ°ÔÀÌ¼Ç
     if (user != null) {
         response.sendRedirect("getBoardList.jsp");
     } else {

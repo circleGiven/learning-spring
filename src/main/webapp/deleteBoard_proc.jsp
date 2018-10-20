@@ -7,18 +7,18 @@
 --%>
 <%@ page import="biz.board.BoardVO" %>
 <%@ page import="biz.board.impl.BoardDAO" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
 <%
-    // ì‚¬ìš©ìž ìž…ë ¥ ì •ë³´ ì¶”ì¶œ
+    // »ç¿ëÀÚ ÀÔ·Â Á¤º¸ ÃßÃâ
     String seq = request.getParameter("seq");
 
-    // DB ì—°ë™ ì²˜ë¦¬
+    // DB ¿¬µ¿ Ã³¸®
     BoardVO vo = new BoardVO();
     vo.setSeq(Integer.getInteger(seq));
 
     BoardDAO boardDAO = new BoardDAO();
     boardDAO.deleteBoard(vo);
 
-    // í™”ë©´ ë„¤ë¹„ê²Œì´ì…˜
+    // È­¸é ³×ºñ°ÔÀÌ¼Ç
     response.sendRedirect("getBoardList.jsp");
 %>
