@@ -24,7 +24,7 @@ public class DispatcherServlet extends HttpServlet {
         handlerMapping = new HandlerMapping();
         viewResolver = new ViewResolver();
         viewResolver.setPrefix("./");
-        viewResolver.setSuffix(".do");
+        viewResolver.setSuffix(".jsp");
     }
 
     @Override

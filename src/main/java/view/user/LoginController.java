@@ -11,7 +11,7 @@ public class LoginController implements Controller {
 
     @Override
     public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("로그인 처리s");
+        System.out.println("로그인 처리");
 
         // 사용자 입력 정보 추출
         String id = request.getParameter("id");

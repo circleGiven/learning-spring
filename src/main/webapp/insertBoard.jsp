@@ -32,7 +32,7 @@
             <tr>
                 <td bgcolor="orange">³»¿ë</td>
                 <td align="left">
-                    <textarea name="content" cols="40" rows="10"/>
+                    <textarea name="content" cols="40" rows="10"></textarea>
                 </td>
             </tr>
             <tr>
