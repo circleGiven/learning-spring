@@ -1,7 +1,8 @@
 package view.controller;
 
-import view.board.GetBoardListController;
+import view.board.*;
 import view.user.LoginController;
+import view.user.LogoutController;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +15,11 @@ public class HandlerMapping {
         mappings = new HashMap<String, Controller>();
         mappings.put("/login.do", new LoginController());
         mappings.put("/getBoardList.do", new GetBoardListController());
+        mappings.put("/getBoard.do", new GetBoardController());
+        mappings.put("/insertBoard.do", new InsertBoardController());
+        mappings.put("/updateBoard.do", new UpdateBoardController());
+        mappings.put("/deleteBoard.do", new DeleteBoardController());
+        mappings.put("/logout.do", new LogoutController());
     }
 
     public Controller getController(String path) {
