@@ -1,0 +1,35 @@
+package view.user;
+
+import biz.user.UserVO;
+import biz.user.impl.UserDAO;
+import view.controller.Controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class LoginController implements Controller {
+
+    @Override
+    public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("로그인 처리s");
+
+        // 사용자 입력 정보 추출
+        String id = request.getParameter("id");
+        String password = request.getParameter("password");
+
+        // DB 연동 처리
+        UserVO vo = new UserVO();
+        vo.setId(id);
+        vo.setPassword(password);
+
+        UserDAO userDAO = new UserDAO();
+        UserVO user = userDAO.getUser(vo);
+
+        // 화면 네비게이션
+        if (null != user) {
+            return "getBoardList.do";
+        } else {
+            return "login";
+        }
+    }
+}
