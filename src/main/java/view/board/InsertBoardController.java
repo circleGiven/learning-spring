@@ -5,8 +5,6 @@ import biz.board.impl.BoardDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
-
 @Controller
 public class InsertBoardController {
 
@@ -15,10 +13,12 @@ public class InsertBoardController {
      * @param vo
      */
     @RequestMapping(value = "/insertBoard.do")
-    public void insertBoard(BoardVO vo) {
+    public String insertBoard(BoardVO vo, BoardDAO boardDAO) {
         System.out.println("글 등록 처리");
 
-        BoardDAO boardDAO = new BoardDAO();
+        // 글 등록
         boardDAO.insertBoard(vo);
+        // 포워드
+        return "getBoardList.do";
     }
 }
