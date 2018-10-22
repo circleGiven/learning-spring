@@ -3,6 +3,7 @@ package view.user;
 import biz.user.UserVO;
 import biz.user.impl.UserDAO;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class LoginController {
 
     @RequestMapping(value = "/login.do", method = RequestMethod.GET)
-    public String loginView(UserVO vo) {
+    public String loginView(@ModelAttribute("user") UserVO vo) {
         System.out.println("로그인 화면으로 이동");
         vo.setId("admin");
         vo.setPassword("admin");
