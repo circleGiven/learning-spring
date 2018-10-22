@@ -8,10 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class InsertBoardController {
 
-    /**
-     * command 객체 사용
-     * @param vo
-     */
     @RequestMapping(value = "/insertBoard.do")
     public String insertBoard(BoardVO vo, BoardDAO boardDAO) {
         System.out.println("글 등록 처리");

@@ -2,30 +2,20 @@ package view.board;
 
 import biz.board.BoardVO;
 import biz.board.impl.BoardDAO;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+@Controller
+public class DeleteBoardController {
 
-public class DeleteBoardController implements Controller {
-    @Override
-    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping("/deleteBoard.do")
+    public String modelAndView(BoardVO vo, BoardDAO boardDAO) {
         System.out.println("글 삭제 처리");
 
-        // 사용자 입력 정보 추출
-        String seq = request.getParameter("seq");
-
-        // DB 연동 처리
-        BoardVO vo = new BoardVO();
-        vo.setSeq(Integer.getInteger(seq));
-
-        BoardDAO boardDAO = new BoardDAO();
+        // 삭제
         boardDAO.deleteBoard(vo);
 
         // 화면 네비게이션
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:getBoardList.do");
-        return modelAndView;
+        return "getBoardList.do";
     }
 }
