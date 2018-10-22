@@ -5,69 +5,55 @@
   Time: 5:22 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@page import="biz.board.impl.BoardDAO" %>
-<%@page import="biz.board.BoardVO" %>
-<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
-
-<%
-    // ººº«ø° ¿˙¿Âµ» ∞‘Ω√±€ ¡§∫∏∏¶ ≤®≥Ω¥Ÿ.
-    BoardVO board = (BoardVO) session.getAttribute("board");
-%>
-
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-    <title>±€ ªÛºº</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Í∏Ä ÏÉÅÏÑ∏</title>
 </head>
 <body>
     <center>
-        <h1>±€ ªÛºº</h1>
+        <h1>Í∏Ä ÏÉÅÏÑ∏</h1>
         <a href="logout.do">Log-out</a>
         <hr>
         <form action="updateBoard.do" method="post">
-            <input name="seq" type="hidden" value="<% board.getSeq() %>"/>
+            <input name="seq" type="hidden" value="${board.seq}"/>
             <table border="1" cellpadding="0" cellspacing="0">
                 <tr>
-                    <td bgcolor="orange" width="70">¡¶∏Ò</td>
+                    <td bgcolor="orange" width="70">Ï†úÎ™©</td>
                     <td align="left">
-                        <input name="title" type="text" value="<%= board.getTitle() %>"/>
+                        <input name="title" type="text" value="${board.title}"/>
                     </td>
                 </tr>
                 <tr>
-                    <td bgcolor="orange">¿€º∫¿⁄</td>
+                    <td bgcolor="orange">ÏûëÏÑ±Ïûê</td>
+                    <td align="left">${board.writer}</td>
+                </tr>
+                <tr>
+                    <td bgcolor="orange">ÎÇ¥Ïö©</td>
                     <td align="left">
-                        <%= board.getWriter() %>
+                        <textarea name="content" cols="40" rows="10">${board.content}</textarea>
                     </td>
                 </tr>
                 <tr>
-                    <td bgcolor="orange">≥ªøÎ</td>
-                    <td align="left">
-                        <textarea name="content" cols="40" rows="10"><%= board.getContent() %></textarea>
-                    </td>
+                    <td bgcolor="orange">Îì±Î°ùÏùº</td>
+                    <td align="left">${board.regDate}</td>
                 </tr>
                 <tr>
-                    <td bgcolor="orange">µÓ∑œ¿œ</td>
-                    <td align="left">
-                        <%= board.getRegDate() %>
-                    </td>
-                </tr>
-                <tr>
-                    <td bgcolor="orange">¡∂»∏ºˆ</td>
-                    <td align="left">
-                        <%= board.getCnt() %>
-                    </td>
+                    <td bgcolor="orange">Ï°∞ÌöåÏàò</td>
+                    <td align="left">${board.cnt}</td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" value="±€ ºˆ¡§"/>
+                        <input type="submit" value="Í∏Ä ÏàòÏ†ï"/>
                     </td>
                 </tr>
             </table>
         </form>
         <hr>
-        <a href="insertBoard.jsp">±€ µÓ∑œ</a>&nbsp;&nbsp;&nbsp;
-        <a href="deleteBoard.do?seq=<%= board.getSeq() %>">±€ ªË¡¶</a>&nbsp;&nbsp;&nbsp;
-        <a href="getBoardList.do">±€ ∏Ò∑œ</a>
+        <a href="insertBoard.jsp">Í∏Ä Îì±Î°ù</a>&nbsp;&nbsp;&nbsp;
+        <a href="deleteBoard.do?seq=${board.seq}">Í∏Ä ÏÇ≠Ï†ú</a>&nbsp;&nbsp;&nbsp;
+        <a href="getBoardList.do">Í∏Ä Î™©Î°ù</a>
     </center>
 </body>
 </html>

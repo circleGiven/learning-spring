@@ -5,34 +5,28 @@
   Time: 3:30 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@page import="java.util.List" %>
-<%@page import="biz.board.BoardVO" %>
-<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
-
-<%
-    // ¼¼¼±¿¡ ÀúÀåµÈ ±Û ¸ñ·Ï ²¨³»±â
-    List<BoardVO> boardList = (List) session.getAttribute("boardLIst");
-%>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-    <title>±Û ¸ñ·Ï</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ê¸€ ëª©ë¡</title>
 </head>
 <body>
 <center>
-    <h1>±Û ¸ñ·Ï</h1>
-    <h3>Å×½ºÆ®´Ô È¯¿µÇÕ´Ï´Ù... <a href="logout.do">Log-out</a></h3>
+    <h1>ê¸€ ëª©ë¡</h1>
+    <h3>í…ŒìŠ¤íŠ¸ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤... <a href="logout.do">Log-out</a></h3>
 
     <form action="getBoardList.do" method="post">
         <table border="1" cellpadding="0" cellspacing="0" width="700">
             <tr>
                 <td align="right">
                     <select name="searchCondition">
-                        <option value="TITLE">Á¦¸ñ</option>
-                        <option value="CONTENT">³»¿ë</option>
+                        <option value="TITLE">ì œëª©</option>
+                        <option value="CONTENT">ë‚´ìš©</option>
                     </select>
                     <input name="searchKeyword" type="text"/>
-                    <input value="°Ë»ö" type="submit"/>
+                    <input value="ê²€ìƒ‰" type="submit"/>
                 </td>
             </tr>
         </table>
@@ -40,29 +34,27 @@
 
     <table border="1" cellspacing="0" cellpadding="0" width="700">
         <tr>
-            <th bgcolor="orange" width="100">¹øÈ£</th>
-            <th bgcolor="orange" width="200">Á¦¸ñ</th>
-            <th bgcolor="orange" width="150">ÀÛ¼ºÀÚ</th>
-            <th bgcolor="orange" width="150">µî·ÏÀÏ</th>
-            <th bgcolor="orange" width="100">Á¶È¸¼ö</th>
+            <th bgcolor="orange" width="100">ë²ˆí˜¸</th>
+            <th bgcolor="orange" width="200">ì œëª©</th>
+            <th bgcolor="orange" width="150">ìž‘ì„±ìž</th>
+            <th bgcolor="orange" width="150">ë“±ë¡ì¼</th>
+            <th bgcolor="orange" width="100">ì¡°íšŒìˆ˜</th>
         </tr>
 
-        <% for (BoardVO board: boardList) { %>
-        <tr>
-            <td><%= board.getSeq()%></td>
-            <td align="left">
-                <a href="getBoard.do?seq=<%= board.getSeq() %>">
-                    <%= board.getTitle() %>
-                </a>
-            </td>
-            <td><%= board.getWriter()%></td>
-            <td><%= board.getRegDate()%></td>
-            <td><%= board.getCnt()%></td>
-        </tr>
-        <% } %>
+        <c:forEach items="${boardList}" var="board">
+            <tr>
+                <td>${board.seq}</td>
+                <td align="left">
+                    <a href="getBoard.do?seq=${board.seq}">${board.title}</a>
+                </td>
+                <td>${board.writer}</td>
+                <td>${board.regDate}</td>
+                <td>${board.cnt}</td>
+            </tr>
+        </c:forEach>
     </table>
     <br>
-    <a href="insertBoard.jsp">»õ±Û µî·Ï</a>
+    <a href="insertBoard.jsp">ìƒˆê¸€ ë“±ë¡</a>
 </center>
 </body>
 </html>
