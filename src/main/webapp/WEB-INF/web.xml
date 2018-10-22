@@ -29,7 +29,7 @@
         <!-- servlet관련 xml을 찾기위한 설정 -->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>WEB-INF/config/dispatcher-servlet.xml</param-value>
+            <param-value>/WEB-INF/config/dispatcher-servlet.xml</param-value>
         </init-param>
         <!-- //servlet관련 xml을 찾기위한 설정 -->
     </servlet>

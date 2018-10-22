@@ -2,7 +2,8 @@ package view.board;
 
 import biz.board.BoardVO;
 import biz.board.impl.BoardDAO;
-import view.controller.Controller;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 public class GetBoardController implements Controller {
     @Override
-    public String handleRequest(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
         System.out.println("글 상세 조회 처리");
         // 검색할 게시글 번호 추출
         String seq = request.getParameter("seq");
@@ -22,9 +23,10 @@ public class GetBoardController implements Controller {
         BoardDAO boardDAO = new BoardDAO();
         BoardVO board = boardDAO.getBoard(vo);
 
-        // 검색 결과를 세션에 저장하고 상세화면으로 이동
-        HttpSession session = request.getSession();
-        session.setAttribute("board", board);
-        return "getBoard";
+        // 검색결과와 화면정보를 ModelAndView에 저장하여 리턴
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("board", board);
+        modelAndView.setViewName("getBoard.jsp");
+        return modelAndView;
     }
 }
