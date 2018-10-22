@@ -26,7 +26,7 @@ public class GetBoardController implements Controller {
         // 검색결과와 화면정보를 ModelAndView에 저장하여 리턴
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("board", board);
-        modelAndView.setViewName("getBoard.jsp");
+        modelAndView.setViewName("getBoard");
         return modelAndView;
     }
 }

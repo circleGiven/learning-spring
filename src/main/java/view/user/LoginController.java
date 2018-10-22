@@ -29,9 +29,9 @@ public class LoginController implements Controller {
         // 화면 네비게이션
         ModelAndView mav = new ModelAndView();
         if (null != user) {
-            mav.setViewName("getBoardList.do");
+            mav.setViewName("redirect:getBoardList.do");
         } else {
-            mav.setViewName("login.jsp");
+            mav.setViewName("redirect:login.jsp");
         }
         return mav;
     }

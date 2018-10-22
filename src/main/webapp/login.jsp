@@ -5,28 +5,28 @@
   Time: 3:02 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>ทฮฑืภฮ</title>
+    <title>๋ก๊ทธ์ธ</title>
 </head>
 <body>
 <center>
-    <h1>ทฮฑืภฮ</h1>
+    <h1>๋ก๊ทธ์ธ</h1>
     <hr>
     <form action="login.do" method="post">
         <table border="1" cellpadding="0">
             <tr>
-                <td bgcolor="orange">พฦภฬต๐</td>
+                <td bgcolor="orange">์•์ด๋””</td>
                 <td><input type="text" name="id"/></td>
             </tr>
             <tr>
-                <td bgcolor="orange">บ๑นะน๘ศฃ</td>
+                <td bgcolor="orange">๋น๋ฐ€๋ฒํธ</td>
                 <td><input type="password" name="password"/></td>
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <input type="submit" value="ทฮฑืภฮ"/>
+                    <input type="submit" value="๋ก๊ทธ์ธ"/>
                 </td>
             </tr>
         </table>

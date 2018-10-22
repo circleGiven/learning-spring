@@ -5,45 +5,45 @@
   Time: 5:51 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>ªı±€µÓ∑œ</title>
+    <title>ÏÉàÍ∏ÄÎì±Î°ù</title>
 </head>
 <body>
 <center>
-    <h1>±€ µÓ∑œ</h1>
+    <h1>Í∏Ä Îì±Î°ù</h1>
     <a href="logout.do">Log-out</a>
     <hr>
     <form action="insertBoard.do" method="post">
         <table border="1" cellspacing="0" cellpadding="0">
             <tr>
-                <td bgcolor="orange" width="70">¡¶∏Ò</td>
+                <td bgcolor="orange" width="70">Ï†úÎ™©</td>
                 <td align="left">
                     <input type="text" name="title"/>
                 </td>
             </tr>
             <tr>
-                <td bgcolor="orange">¿€º∫¿⁄</td>
+                <td bgcolor="orange">ÏûëÏÑ±Ïûê</td>
                 <td align="left">
                     <input type="text" name="writer" size="10"/>
                 </td>
             </tr>
             <tr>
-                <td bgcolor="orange">≥ªøÎ</td>
+                <td bgcolor="orange">ÎÇ¥Ïö©</td>
                 <td align="left">
                     <textarea name="content" cols="40" rows="10"></textarea>
                 </td>
             </tr>
             <tr>
                 <td colspan="2" align="left">
-                    <input type="submit" name=" ªı±€ µÓ∑œ "/>
+                    <input type="submit" name=" ÏÉàÍ∏Ä Îì±Î°ù "/>
                 </td>
             </tr>
         </table>
     </form>
     <hr>
-    <a href="WEB-INF/board/getBoardList.jsp">±€ ∏Ò∑œ ∞°±‚</a>
+    <a href="WEB-INF/board/getBoardList.jsp">Í∏Ä Î™©Î°ù Í∞ÄÍ∏∞</a>
 </center>
 
 </body>

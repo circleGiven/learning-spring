@@ -29,7 +29,7 @@ public class UpdateBoardController implements Controller {
 
         // 화면 네비게이션
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("getBoardList.do");
+        modelAndView.setViewName("redirect:getBoardList.do");
         return modelAndView;
     }
 }

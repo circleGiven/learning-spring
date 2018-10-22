@@ -26,7 +26,7 @@ public class GetBoardListController implements Controller {
         // 검색 결과 저장
         modelAndView.addObject("boardList", boardList);
         // 화면 정보 설정
-        modelAndView.setViewName("getBoardList.jsp");
+        modelAndView.setViewName("getBoardList");
         return modelAndView;
     }
 }

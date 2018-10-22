@@ -28,4 +28,11 @@
     <bean id="deleteBoard" class="view.board.DeleteBoardController"></bean>
     <bean id="logout" class="view.user.LogoutController"></bean>
     <!-- //컨트롤러 등록 -->
+
+    <!-- ViewResolver -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/board/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+    <!-- //ViewResolver -->
 </beans>
