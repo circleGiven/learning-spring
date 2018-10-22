@@ -3,6 +3,7 @@ package view.board;
 import biz.board.BoardVO;
 import biz.board.impl.BoardDAO;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -43,22 +44,20 @@ public class BoardController {
 
     // 글 상세조회
     @RequestMapping("/getBoard.do")
-    public ModelAndView getBoard(BoardVO vo, BoardDAO boardDAO, ModelAndView modelAndView) {
+    public String getBoard(BoardVO vo, BoardDAO boardDAO, Model model) {
         System.out.println("글 상세 조회 처리");
-        modelAndView.addObject("board", boardDAO.getBoard(vo));
-        modelAndView.setViewName("getBoard.jsp");
-        return modelAndView;
+        model.addAttribute("board", boardDAO.getBoard(vo));
+        return "getBoard.jsp";
     }
 
     // 글 목록 검색
     @RequestMapping("/getBoardList.do")
-    public ModelAndView getBoardList(BoardVO vo, BoardDAO boardDAO, ModelAndView modelAndView) {
+    public String getBoardList(BoardVO vo, BoardDAO boardDAO, Model model) {
         System.out.println("글 목록 검색 처리");
         // 검색 결과 저장
-        modelAndView.addObject("boardList", boardDAO.getBoardList(vo));
+        model.addAttribute("boardList", boardDAO.getBoardList(vo));
         // 화면 정보 설정
-        modelAndView.setViewName("getBoardList.jsp");
-        return modelAndView;
+        return "getBoardList.jsp";
     }
 
 }
