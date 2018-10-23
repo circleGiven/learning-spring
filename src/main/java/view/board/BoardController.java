@@ -7,12 +7,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Controller
+@SessionAttributes("board")
 public class BoardController {
 
 
@@ -39,9 +40,15 @@ public class BoardController {
 
     // 글 수정
     @RequestMapping("updateBoard.do")
-    public String updateBoard(BoardVO vo, BoardDAO boardDAO) {
+    public String updateBoard(@ModelAttribute("board") BoardVO vo, BoardDAO boardDAO) {
         System.out.println("글 수정 처리");
-
+        // 작성자 이름 check
+        System.out.println("번호 : " + vo.getSeq());
+        System.out.println("제목 : " + vo.getTitle());
+        System.out.println("작성자 이름 : " + vo.getWriter());
+        System.out.println("내용 : " + vo.getContent());
+        System.out.println("등록일 : " + vo.getRegDate());
+        System.out.println("조회수 : " + vo.getCnt());
         // 업데이트
         boardDAO.updateBoard(vo);
         return "getBoardList.do";
@@ -63,6 +70,8 @@ public class BoardController {
     @RequestMapping("/getBoard.do")
     public String getBoard(BoardVO vo, BoardDAO boardDAO, Model model) {
         System.out.println("글 상세 조회 처리");
+        // 조회 결과를 model 에 저장
+        // @SessionAttribute("board")라는 설정이 있으면 model에 저장될때 세션에 같이 저장됨
         model.addAttribute("board", boardDAO.getBoard(vo));
         return "getBoard.jsp";
     }
