@@ -19,7 +19,6 @@
     <!--<bean id="tv" class="polymorphism.LgTV"></bean>-->
     <!--<bean id="sony" class="polymorphism.SonySpeaker"></bean>-->
     <!-- //polymorphism -->
-
     <context:property-placeholder location="classpath:config/database.properties"/>
     <!-- datasource 설정 -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
@@ -61,9 +60,4 @@
     <!--<aop:aspectj-autoproxy></aop:aspectj-autoproxy>-->
     <!-- //aop 어노테이션을 위한 설정 -->
     <!-- //biz -->
-
-    <!-- 파일 업로드 설정 -->
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <property name="maxUploadSize" value="100000"/>
-    </bean>
 </beans>
