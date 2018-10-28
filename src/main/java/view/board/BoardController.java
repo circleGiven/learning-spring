@@ -1,5 +1,6 @@
 package view.board;
 
+import biz.board.BoardListVO;
 import biz.board.BoardService;
 import biz.board.BoardVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class BoardController {
         vo.setSearchCondition("TITLE");
         vo.setSearchKeyword("");
         List<BoardVO> boardVOList = boardService.getBoardList(vo);
+        // XML 반환시에만 사용
+//        BoardListVO boardListVO = new BoardListVO();
+//        boardListVO.setBoardList(boardVOList);
         return boardVOList;
     }
 
