@@ -23,6 +23,9 @@ public class LoginController {
     @RequestMapping(value = "/login.do", method = RequestMethod.POST)
     public String login(UserVO vo, UserDAO userDAO, HttpSession session) {
         System.out.println("로그인 인증 처리...");
+        if (null == vo.getId() || vo.getId().equals("")) {
+            throw new IllegalArgumentException("아이디는 반드시 입력해야 합니다.");
+        }
         // user
         UserVO user = userDAO.getUser(vo);
         // 화면 네비게이션
