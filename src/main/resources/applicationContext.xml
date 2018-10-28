@@ -41,18 +41,18 @@
     <!-- //Transaction 설정 -->
 
     <!-- 트랜잭션 관리 어드바이스 -->
-    <tx:advice id="txAdvice" transaction-manager="txManager">
-        <tx:attributes>
-            <tx:method name="get*" read-only="true"/>
-            <tx:method name="*"/>
-        </tx:attributes>
-    </tx:advice>
+    <!--<tx:advice id="txAdvice" transaction-manager="txManager">-->
+        <!--<tx:attributes>-->
+            <!--<tx:method name="get*" read-only="true"/>-->
+            <!--<tx:method name="*"/>-->
+        <!--</tx:attributes>-->
+    <!--</tx:advice>-->
     <!-- //트랜잭션 관리 어드바이스 -->
 
-    <aop:config>
-        <aop:pointcut id="txPointcut" expression="execution(* biz..*(..))"/>
-        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
-    </aop:config>
+    <!--<aop:config>-->
+        <!--<aop:pointcut id="txPointcut" expression="execution(* biz..*(..))"/>-->
+        <!--<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>-->
+    <!--</aop:config>-->
 
     <!-- biz -->
     <context:component-scan base-package="biz"></context:component-scan>

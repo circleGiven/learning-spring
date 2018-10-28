@@ -82,12 +82,15 @@ public class BoardController {
 
     // 글 목록 검색
     @RequestMapping("/getBoardList.do")
-    public String getBoardList(@RequestParam(value = "searchCondition", defaultValue = "TITLE", required = false) String condition,
-                               @RequestParam(value = "searchKeyword", defaultValue = "", required = false) String keyword,
-                               BoardVO vo, Model model) {
+    public String getBoardList(BoardVO vo, Model model) {
         System.out.println("글 목록 검색 처리");
-        System.out.println("검색 조건 : " + condition);
-        System.out.println("검색 단어 : " + keyword);
+        // Null check
+        if (null == vo.getSearchCondition()) {
+            vo.setSearchCondition("TITLE");
+        }
+        if (null == vo.getSearchKeyword()) {
+            vo.setSearchKeyword("");
+        }
 
         // 검색 결과 저장
         model.addAttribute("boardList", boardService.getBoardList(vo));
