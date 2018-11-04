@@ -109,5 +109,19 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.9.6</version>
         </dependency>
+
+        <!-- mybatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+        <!-- ibatis -->
+        <dependency>
+            <groupId>org.apache.ibatis</groupId>
+            <artifactId>ibatis-sqlmap</artifactId>
+            <version>2.3.4.726</version>
+        </dependency>
     </dependencies>
 </project>

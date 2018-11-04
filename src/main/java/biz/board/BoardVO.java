@@ -1,12 +1,5 @@
 package biz.board;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlTransient;
 import java.sql.Date;
 
 /**
@@ -15,21 +8,15 @@ import java.sql.Date;
  * 레이어와 레이어 사이에서 관련된 데이터를 한꺼번에 주고받을 목적으로 사용하는 클래스
  * DTO(Data Transfer Object)라고 부르기도 함
  */
-//@XmlAccessorType(XmlAccessType.FIELD) // XML로 변환하기 위함
 public class BoardVO {
-//    @XmlAttribute // seq만 속성으로 변환
     private int seq;
     private String title;
     private String writer;
     private String content;
     private Date regDate;
     private int cnt;
-//    @XmlTransient // xml 변화에서 제외
     private String searchCondition;
-//    @XmlTransient
     private String searchKeyword;
-//    @XmlTransient
-    private MultipartFile uploadFile;
 
     public int getSeq() {
         return seq;
@@ -79,7 +66,6 @@ public class BoardVO {
         this.cnt = cnt;
     }
 
-    @JsonIgnore
     public String getSearchCondition() {
         return searchCondition;
     }
@@ -88,22 +74,12 @@ public class BoardVO {
         this.searchCondition = searchCondition;
     }
 
-    @JsonIgnore
     public String getSearchKeyword() {
         return searchKeyword;
     }
 
     public void setSearchKeyword(String searchKeyword) {
         this.searchKeyword = searchKeyword;
-    }
-
-    @JsonIgnore
-    public MultipartFile getUploadFile() {
-        return uploadFile;
-    }
-
-    public void setUploadFile(MultipartFile uploadFile) {
-        this.uploadFile = uploadFile;
     }
 
     @Override

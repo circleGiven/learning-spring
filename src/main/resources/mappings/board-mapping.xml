@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="BoardDAO" >
+    <insert id="insertBoard" useGeneratedKeys="true" keyProperty="SEQ">
+        insert into BOARD(TITLE, WRITER, CONTENT)
+        values (#{title}, #{writer}, #{content})
+    </insert>
+
+    <update id="updateBoard">
+        update BOARD set TITLE=#{title}, CONTENT=#{content} where SEQ=#{seq}
+    </update>
+
+    <delete id="deleteBoard">
+        delete BOARD where SEQ=#{seq}
+    </delete>
+
+    <select id="getBoard" resultType="board">
+        select * from BOARD where SEQ=#{seq}
+    </select>
+
+    <select id="getBoardList" resultType="board">
+        select * from BOARD
+        where TITLE like '%'||#{searchKeyword}||'%'
+        order by SEQ desc
+    </select>
+</mapper>
